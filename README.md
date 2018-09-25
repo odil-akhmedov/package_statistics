@@ -56,8 +56,10 @@ Then, we are grabbing the top ten packages.
 ***HOW TO USE***
 
 1. Download, extact the project, navigate to 'package_statistics' directory
+```
 $ unzip package_statistics.zip
 $ cd package_statistics/
+```
 2. Install virtualenv and configure virtualenv
 
 ```
