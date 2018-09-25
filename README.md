@@ -80,7 +80,7 @@ $ pip install pandas wheel
 
 5. Run the command
 ```
-$ bin/package_statistics mips
+$ project/bin/package_statistics mips
 ```
 Use amd64, mips or other architecture codes
 
