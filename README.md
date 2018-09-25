@@ -1,9 +1,9 @@
-*Package Statistics*
-## Author: Odiljon (Odil) Akhmedov
+# Package Statistics
+##### Author: Odiljon (Odil) Akhmedov
 
 
-After analyzing https://wiki.debian.org/DebianRepository/Format?action=show&redirect=RepositoryFormat#A.22Contents.22_indices and the content indices file format,
-I came up with the following solution.
+After analyzing https://wiki.debian.org/DebianRepository/Format?action=show&redirect=RepositoryFormat#A.22Contents.22_indices 
+and the content indices file format, I came up with the following solution.
 
 I created a python command line utility with only one argument expected; the architecture code (amd64, mips etc).
 I structured the project in a way that I separated command line options hanldin, program logic, and processing.
