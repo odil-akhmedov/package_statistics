@@ -28,18 +28,21 @@ I decided to use Linux commands instead of something like urllib, again because 
 
 
 ```
-command = "wget -O archive.gz " + url
+file_path = "project/files/archive.gz"
+archive_path = "project/files/archive"
+command = "wget -O " + file_path + " " + url
 os.system(command)
 
-command = "gzip -d -k archive.gz"
+command = "gzip -d -k " + file_path
 os.system(command)
+
 ```
 
 Lastly, python's csv reader reads the extracted file, grabs the last columns values, solit the comma separation and loads them into Pandas data frame.
 Then, we are grabbing the top ten packages. 
 
 ```
-        with open("archive", "r", ) as fp:
+        with open(archive_path, "r", ) as fp:
             reader = csv.reader(fp, delimiter=' ')
             # Grabbing the last column, split the comma-separation into newline separation
             rows = [ x[-1:][0].replace(',','\n') for x in reader] 
@@ -65,6 +68,7 @@ $ virtualenv .
 3. "Activate" the virtualenv 
 ```
 $ source bin/activate
+$ chmod 755 project/bin/package_statistics
 ``` 
 
 4. Install pandas, wheel

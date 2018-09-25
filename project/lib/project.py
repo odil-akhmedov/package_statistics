@@ -25,10 +25,12 @@ class Project:
         # Downloading the file
         # Python libraries handle large size file downloads poorly
         # Instead, we will use Linux to handle download and extract
-        command = "wget -O archive.gz " + url
+        file_path = "project/files/archive.gz"
+        archive_path = "project/files/archive"
+        command = "wget -O " + file_path + " " + url
         os.system(command)
 
-        command = "gzip -d -k archive.gz"
+        command = "gzip -d -k " + file_path
         os.system(command)
 
         # ********************** #
@@ -38,7 +40,7 @@ class Project:
 
         # Due to non-standard format of the data, we really are interested 
         # in the last column data
-        with open("archive", "r", ) as fp:
+        with open(archive_path, "r", ) as fp:
             reader = csv.reader(fp, delimiter=' ')
             # Grabbing the last column, split the comma-separation into newline separation
             rows = [ x[-1:][0].replace(',','\n') for x in reader] 
